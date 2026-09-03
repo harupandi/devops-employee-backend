@@ -1,7 +1,7 @@
 # MOCK UP DATA SIMULATING A DATABASE CALL. FOR TESTING PURPOSES, THE DATA IS CODED HERE
 EMPLOYEES = [
     {"id": 1, "first_name": "Bryan", "last_name": "Pineda", "department": "Engineering", "role": "Software Engineer", "email": "olivia.bennett@example.com"},
-    {"id": 2, "first_name": "Liam", "last_name": "Carter", "department": "Engineering", "role": "DevOps Engineer", "email": "liam.carter@example.com"},
+    {"id": 2, "first_name": "Stefanie", "last_name": "Lopez", "department": "Engineering", "role": "DevOps Engineer", "email": "liam.carter@example.com"},
     {"id": 3, "first_name": "Emma", "last_name": "Mitchell", "department": "Finance", "role": "Financial Analyst", "email": "emma.mitchell@example.com"},
     {"id": 4, "first_name": "Noah", "last_name": "Turner", "department": "Sales", "role": "Sales Representative", "email": "noah.turner@example.com"},
     {"id": 5, "first_name": "Ava", "last_name": "Parker", "department": "HR", "role": "HR Specialist", "email": "ava.parker@example.com"},
