@@ -31,8 +31,9 @@ jobs:
       - name: Run tests
         run: pytest
 
+
   build-and-scan:
-    name: Build  and Scan Docker Image
+    name: Build and Scan Docker Image
     needs: test
     runs-on: ubuntu-latest
 
@@ -54,3 +55,60 @@ jobs:
           exit-code: 1
           ignore-unfixed: true
           severity: CRITICAL,HIGH
+      
+      - name: Save Docker image
+        run: |
+          docker save \
+            devops-employee-backend:${{ github.sha }} \
+            -o devops-employee-backend.tar
+
+      - name: Upload Docker image artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: devops-employee-backend-${{ github.sha }}
+          path: devops-employee-backend.tar
+          retention-days: 1
+  
+
+  push-to-acr:
+    name: Push Docker Image to ACR
+    needs: build-and-scan
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Download Docker image artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: devops-employee-backend-${{ github.sha }}
+
+      - name: Load Docker image
+        run: |
+          docker load \
+            --input devops-employee-backend.tar
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Login to ACR
+        run: |
+          az acr login --name ${{ vars.ACR_NAME }}
+
+      - name: Tag Docker image
+        run: |
+          docker tag \
+            devops-employee-backend:${{ github.sha }} \
+            ${{ vars.ACR_LOGIN_SERVER }}/devops-employee-backend:${{ github.sha }}
+
+      - name: Push Docker image
+        run: |
+          docker push \
+            ${{ vars.ACR_LOGIN_SERVER }}/devops-employee-backend:${{ github.sha }}
