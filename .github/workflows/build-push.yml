@@ -30,3 +30,27 @@ jobs:
 
       - name: Run tests
         run: pytest
+
+  build-and-scan:
+    name: Build  and Scan Docker Image
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            -t devops-employee-backend:${{ github.sha }} \
+            .
+
+      - name: Scan Docker image
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: devops-employee-backend:${{ github.sha }}
+          format: table
+          exit-code: 1
+          ignore-unfixed: true
+          severity: CRITICAL,HIGH
