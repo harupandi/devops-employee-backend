@@ -73,6 +73,7 @@ jobs:
   push-to-acr:
     name: Push Docker Image to ACR
     needs: build-and-scan
+    environment: dev
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
