@@ -2,7 +2,7 @@
 EMPLOYEES = [
     {"id": 1, "first_name": "Bryan", "last_name": "Pineda", "department": "Engineering", "role": "Software Engineer", "email": "olivia.bennett@example.com"},
     {"id": 2, "first_name": "Stefanie", "last_name": "Lopez", "department": "Engineering", "role": "DevOps Engineer", "email": "liam.carter@example.com"},
-    {"id": 3, "first_name": "Emma", "last_name": "Mitchell", "department": "Finance", "role": "Financial Analyst", "email": "emma.mitchell@example.com"},
+    {"id": 3, "first_name": "Steven", "last_name": "Gutierrez", "department": "Finance", "role": "Financial Analyst", "email": "emma.mitchell@example.com"},
     {"id": 4, "first_name": "Noah", "last_name": "Turner", "department": "Sales", "role": "Sales Representative", "email": "noah.turner@example.com"},
     {"id": 5, "first_name": "Ava", "last_name": "Parker", "department": "HR", "role": "HR Specialist", "email": "ava.parker@example.com"},
     {"id": 6, "first_name": "Ethan", "last_name": "Collins", "department": "Engineering", "role": "Backend Engineer", "email": "ethan.collins@example.com"},
