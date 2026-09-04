@@ -1,4 +1,4 @@
-name: Backend CI
+name: Backend CI/CD
 
 on:
   pull_request:
@@ -52,7 +52,9 @@ jobs:
 
   build-and-scan:
     name: Build and Scan Docker Image
-    needs: test
+    needs:
+      - test
+      - secret-scan
     runs-on: ubuntu-latest
 
     steps:
