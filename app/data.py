@@ -5,7 +5,7 @@ EMPLOYEES = [
     {"id": 3, "first_name": "Steven", "last_name": "Gutierrez", "department": "Finance", "role": "Financial Analyst", "email": "emma.mitchell@example.com"},
     {"id": 4, "first_name": "Undrik2", "last_name": "Turner", "department": "Sales", "role": "Sales Representative", "email": "noah.turner@example.com"},
     {"id": 5, "first_name": "Ava", "last_name": "Parker", "department": "HR", "role": "HR Specialist", "email": "ava.parker@example.com"},
-    {"id": 6, "first_name": "Ethan", "last_name": "Collins", "department": "Engineering", "role": "Backend Engineer", "email": "ethan.collins@example.com"},
+    {"id": 6, "first_name": "Israel", "last_name": "Padilla", "department": "Engineering", "role": "Backend Engineer", "email": "ethan.collins@example.com"},
     {"id": 7, "first_name": "Sophia", "last_name": "Reed", "department": "Marketing", "role": "Marketing Manager", "email": "sophia.reed@example.com"},
     {"id": 8, "first_name": "Dexter", "last_name": "Morgan", "department": "IT", "role": "Systems Administrator", "email": "mason.morgan@example.com"},
     {"id": 9, "first_name": "Isabella", "last_name": "Morgan", "department": "Engineering", "role": "QA Engineer", "email": "isabella.brooks@example.com"},
