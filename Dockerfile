@@ -3,11 +3,7 @@ FROM python:3.12-slim-trixie
 WORKDIR /app
 
 RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get purge -y perl-base && \
-    apt-get autoremove -y && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get upgrade -y
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
