@@ -3,6 +3,9 @@ from .data import EMPLOYEES
 
 employees_bp = Blueprint("employees", __name__)
 
+#FAKE API KEY TO SIMULATE SUCCESSFUL SECRET SCANNING
+API_KEY = uG2HrS4ZKky7LK8hjP57uYAyJWOFsdG9
+
 @employees_bp.get("/employees")
 def list_employees():
     # Simulates a paginated DB query.
