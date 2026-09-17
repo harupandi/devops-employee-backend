@@ -4,7 +4,7 @@ from .data import EMPLOYEES
 employees_bp = Blueprint("employees", __name__)
 
 #FAKE API KEY TO SIMULATE SUCCESSFUL SECRET SCANNING
-API_KEY = REDACTED
+API_KEY = 'REDACTED'
 
 @employees_bp.get("/employees")
 def list_employees():
