@@ -63,7 +63,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build --no-cache \
+          docker build \
             -t devops-employee-backend:${{ github.sha }} \
             .
 
