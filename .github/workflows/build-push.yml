@@ -135,7 +135,7 @@ jobs:
             ${{ vars.ACR_LOGIN_SERVER }}/devops-employee-backend:${{ github.sha }}
     
   update-k8s-dev:
-    name: Update K8s dev image
+    name: Update K8s dev backend image
     needs: push-to-acr
     environment: backend-k8s-dev
     runs-on: ubuntu-latest
