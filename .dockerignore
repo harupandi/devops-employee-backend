@@ -1,0 +1,7 @@
+.github/
+tests/
+pytest.ini
+
+.gitignore
+Dockerfile
+.dockerignore
