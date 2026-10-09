@@ -1,3 +1,15 @@
+# DevOps Employee — Backend API
+
+Project simulating an Employee platform and its CI/CD repositories and pipelines. This is the source code repo that handles backend image build and release to ACR.
+
+*Note: This is a lab for learning purposes.*
+
+Other related repositories:
+
+* [Kubernetes/ArgoCD manifests repository](https://github.com/harupandi/devops-employee-k8s)
+* [Terraform infrastructure repository](https://github.com/harupandi/devops-employee-infrastructure)
+* [Frontend repository](https://github.com/harupandi/devops-employee-frontend)
+
 ### Backend API (Python / Flask)
 
 A REST API built with Python and Flask that serves mock employee data, supports paginated employee listings and individual employee lookups, and exposes a health-check endpoint. Uses Gunicorn as the production WSGI server and runs inside a Docker container as a non-root user.
